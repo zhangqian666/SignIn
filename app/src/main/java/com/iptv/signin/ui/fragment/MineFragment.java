@@ -1,6 +1,7 @@
 package com.iptv.signin.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,18 +13,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.iptv.signin.R;
+import com.iptv.signin.bean.LoginData;
+import com.iptv.signin.ui.activity.PersonalDescActivity;
+import com.iptv.signin.utils.SpUtil;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+import static com.iptv.signin.SignInApplication.mContext;
 import static com.iptv.signin.bean.CommonData.EXCHANGE_NAME;
 import static com.iptv.signin.bean.CommonData.HOSTNAME;
 import static com.iptv.signin.bean.CommonData.PASSWORD;
@@ -43,18 +52,29 @@ public class MineFragment extends BaseFragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @BindView(R.id.toolbar_mine_fragment)
+    Toolbar mToolbar;
+    @BindView(R.id.image_mine_header)
+    ImageView mImageMineHeader;
+    @BindView(R.id.text_name_mine_header)
+    TextView mTextNameMineHeader;
+    @BindView(R.id.text_desc_mine_content)
+    TextView mTextDescMineContent;
+    @BindView(R.id.ll_head_mine)
+    LinearLayout mllHeadMine;
+    @BindView(R.id.ll_item_album_mine_content)
+    LinearLayout mllItemAlbumMineContent;
+    @BindView(R.id.ll_item_save_mine_content)
+    LinearLayout mllItemSaveMineContent;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private View mRootView;
-    private Button mBtn;
-    private TextView mText;
     private ConnectionFactory factory;
     private Thread subscribeThread;
     private Connection connection;
     private Channel channel;
-    private Toolbar mToolBar;
 
 
     public MineFragment() {
@@ -95,14 +115,28 @@ public class MineFragment extends BaseFragment {
         // Inflate the layout for this fragment
         mRootView = inflater.inflate(R.layout.fragment_mine, container, false);
         ButterKnife.bind(this, mRootView);
-        mToolBar = ((Toolbar) mRootView.findViewById(R.id.toolbar_mine_fragment));
         initActionBar();
+        initUI();
         return mRootView;
     }
+
+    /**
+     * 初始化界面
+     */
+    private void initUI() {
+        LoginData loginData = SpUtil.getLoginData();
+        Glide.with(mContext).load(loginData.getUserHeadImage()).into(mImageMineHeader);
+        mTextNameMineHeader.setText(loginData.getUserName());
+        mTextDescMineContent.setText(loginData.getUserDesc());
+    }
+
+    /**
+     * 初始化actionbar
+     */
     private void initActionBar() {
         setHasOptionsMenu(true);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.setSupportActionBar(mToolBar);
+        activity.setSupportActionBar(mToolbar);
         ActionBar supportActionBar = activity.getSupportActionBar();
         supportActionBar.setTitle("个人页面");
     }
@@ -170,6 +204,19 @@ public class MineFragment extends BaseFragment {
             }
         });
         subscribeThread.start();
+    }
+
+    @OnClick({R.id.ll_head_mine, R.id.ll_item_album_mine_content, R.id.ll_item_save_mine_content})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_head_mine:
+                startActivity(new Intent(getActivity(), PersonalDescActivity.class));
+                break;
+            case R.id.ll_item_album_mine_content:
+                break;
+            case R.id.ll_item_save_mine_content:
+                break;
+        }
     }
 }
 

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.AutoScrollHelper;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -25,12 +24,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.iptv.signin.R;
-import com.iptv.signin.adapter.SignInTimeAdapter;
 import com.iptv.signin.bean.CommonData;
 import com.iptv.signin.bean.SignInTime;
 import com.iptv.signin.persenter.SignInPersenter;
 import com.iptv.signin.ui.activity.BaseActivity;
 import com.iptv.signin.ui.activity.MainActivity;
+import com.iptv.signin.ui.adapter.SignInTimeAdapter;
 import com.iptv.signin.view.SignInView;
 
 import java.text.SimpleDateFormat;
@@ -38,7 +37,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.iptv.signin.others.SignInApplication.mContext;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
+import static com.iptv.signin.SignInApplication.mContext;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,19 +56,25 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    @BindView(R.id.main_toolbar)
+    Toolbar mToolBar;
+    @BindView(R.id.recycle_view)
+    RecyclerView mRecycleView;
+    @BindView(R.id.fabButton)
+    FloatingActionButton mFabBtn;
+    @BindView(R.id.left_content)
+    ImageView mleftContent;
+    @BindView(R.id.drawer_home_fragment)
+    DrawerLayout mDrawerLayout;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private View mRootView;
     private AddTimeBroadcastReceiver addTimeBroadcastReceiver;
     private List<SignInTime> signInTimes = new ArrayList<>();
     private SignInTimeAdapter mAdapter;
-    private RecyclerView mRecycleView;
-    private FloatingActionButton mFabBtn;
-    private Toolbar mToolBar;
-    private DrawerLayout mDrawerLayout;
+    private Unbinder mBind;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -103,33 +112,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_home, container, false);
-        mDrawerLayout = (DrawerLayout) mRootView.findViewById(R.id.drawer_home_fragment);
-        mToolBar = (Toolbar) mRootView.findViewById(R.id.main_toolbar);
-        mRecycleView = ((RecyclerView) mRootView.findViewById(R.id.recycle_view));
-        mFabBtn = (FloatingActionButton) mRootView.findViewById(R.id.fabButton);
-        ImageView mleftContent = (ImageView) mRootView.findViewById(R.id.left_content);
-        mleftContent.setOnTouchListener(new AutoScrollHelper(container) {
-            @Override
-            public void scrollTargetBy(int deltaX, int deltaY) {
-
-            }
-
-            @Override
-            public boolean canTargetScrollHorizontally(int direction) {
-                return false;
-            }
-
-            @Override
-            public boolean canTargetScrollVertically(int direction) {
-                return false;
-            }
-        });
-        Glide.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489315449818&di=973f3d183bcacb79bdcfa87c724c222a&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F4ec2d5628535e5ddd386c2df74c6a7efce1b6203.jpg")
-                .centerCrop().into(mleftContent);
-
+        mBind = ButterKnife.bind(this, mRootView);
         initActionBar();
         //初始化 floatActionBtn
         initfabBtn();
+        initLeftContent();
         //注册接收
         mRegisterReceiver();
         //在数据库获得数据
@@ -138,6 +125,14 @@ public class HomeFragment extends Fragment {
         showRecycle();
         // Inflate the layout for this fragment
         return mRootView;
+    }
+
+    /**
+     * 初始化侧滑菜单
+     */
+    private void initLeftContent() {
+        Glide.with(mContext).load(CommonData.mHomeImage)
+                .centerCrop().into(mleftContent);
     }
 
     private void initActionBar() {
@@ -304,6 +299,7 @@ public class HomeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         getActivity().unregisterReceiver(addTimeBroadcastReceiver);
+        mBind.unbind();
     }
 
 }

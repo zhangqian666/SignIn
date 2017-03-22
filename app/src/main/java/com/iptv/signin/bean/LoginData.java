@@ -12,6 +12,15 @@ public class LoginData extends DataSupport{
     private String userId;
     private String userToken;
     private String userHeadImage;
+    private String userDesc;
+
+    public String getUserDesc() {
+        return userDesc;
+    }
+
+    public void setUserDesc(String userDesc) {
+        this.userDesc = userDesc;
+    }
 
     public String getUserName() {
         return userName;
@@ -51,5 +60,17 @@ public class LoginData extends DataSupport{
 
     public void setUserHeadImage(String userHeadImage) {
         this.userHeadImage = userHeadImage;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginData{" +
+                "userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userId='" + userId + '\'' +
+                ", userToken='" + userToken + '\'' +
+                ", userHeadImage='" + userHeadImage + '\'' +
+                ", userDesc='" + userDesc + '\'' +
+                '}';
     }
 }

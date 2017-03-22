@@ -1,4 +1,4 @@
-package com.iptv.signin.ui.conversation;
+package com.iptv.signin.ui.rongim;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;

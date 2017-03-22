@@ -15,6 +15,9 @@ import com.iptv.signin.R;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.Conversation;
 
@@ -28,14 +31,18 @@ public class SignInFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @BindView(R.id.toolbar_sign_in_fragment)
+    Toolbar mToolBar;
+    @BindView(R.id.btn_sign_in_fragment)
+    TextView mBtnEnter;
+    @BindView(R.id.btn1_sign_in_fragment)
+    TextView mBtn1Enter;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private View mRootView;
-    private TextView mBtnEnter;
-    private TextView mBtn1Enter;
-    private Toolbar mToolBar;
+    private Unbinder mBind;
 
 
     public SignInFragment() {
@@ -74,7 +81,7 @@ public class SignInFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mRootView = inflater.inflate(R.layout.fragment_sign_in, container, false);
-        mBtnEnter = (TextView) mRootView.findViewById(R.id.btn_sign_in_fragment);
+        mBind = ButterKnife.bind(this, mRootView);
         mBtnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,15 +90,12 @@ public class SignInFragment extends Fragment {
                 RongIM.getInstance().startConversationList(getActivity(), supportedConversation);
             }
         });
-        mBtn1Enter = (TextView) mRootView.findViewById(R.id.btn1_sign_in_fragment);
         mBtn1Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RongIM.getInstance().startPrivateChat(getActivity(), "415678", "标题-“1号客服”为您服务");
             }
         });
-
-        mToolBar = ((Toolbar) mRootView.findViewById(R.id.toolbar_sign_in_fragment));
         initActionBar();
         return mRootView;
     }
@@ -118,5 +122,11 @@ public class SignInFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mBind.unbind();
     }
 }

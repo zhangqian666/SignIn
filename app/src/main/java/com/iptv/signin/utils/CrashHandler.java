@@ -15,7 +15,7 @@ import com.iptv.signin.view.CrashHandlerPostView;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import static com.iptv.signin.others.SignInApplication.mContext;
+import static com.iptv.signin.SignInApplication.mContext;
 
 /**
  * Created by ZhangQian on 2017/3/13 0013.
@@ -51,6 +51,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
         // TODO Auto-generated method stub
+        ex.printStackTrace();
         if (!handleException(thread, ex) && mDefaultCrashHandler != null) {
             // 如果用户没有处理则让系统默认的异常处理器来处理
             Log.e(TAG, "uncaughtException: " );

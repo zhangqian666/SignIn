@@ -19,6 +19,9 @@ import com.iptv.signin.ui.fragment.HomeFragment;
 import com.iptv.signin.ui.fragment.MineFragment;
 import com.iptv.signin.ui.fragment.SignInFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 
@@ -26,10 +29,14 @@ import static com.iptv.signin.bean.CommonData.localAddress;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
-    private FrameLayout mContain;
+    @BindView(R.id.main_contain)
+    FrameLayout mContain;
+    @BindView(R.id.bottom_navigation_bar)
+    BottomNavigationBar mBottomNavigationBar;
     private HomeFragment mHomeFragment;
     private SignInFragment mSignInFragment;
     private MineFragment mMineFragment;
+    private Unbinder mBind;
 
     /**
      * 初始化
@@ -40,7 +47,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mContain = (FrameLayout) findViewById(R.id.main_contain);
+        mBind = ButterKnife.bind(this);
         //初始化 底部导航
         initButtomNavigation();
         //开始后台签到服务
@@ -95,6 +102,9 @@ public class MainActivity extends BaseActivity {
         }
     };
 
+    /**
+     * 初始化高德地图
+     */
     private void initAMap() {
         //初始化定位
         mLocationClient = new AMapLocationClient(getApplicationContext());
@@ -165,8 +175,6 @@ public class MainActivity extends BaseActivity {
      * 初始化 底部导航
      */
     private void initButtomNavigation() {
-        BottomNavigationBar mBottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
-
         mBottomNavigationBar
                 .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp
                         , getResources().getString(R.string.main_bottom_home)).setActiveColor(R.color.orange))
@@ -245,6 +253,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mBind.unbind();
     }
 
 

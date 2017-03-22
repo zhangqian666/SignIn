@@ -1,4 +1,4 @@
-package com.iptv.signin.others;
+package com.iptv.signin;
 
 import android.app.Application;
 import android.content.Context;

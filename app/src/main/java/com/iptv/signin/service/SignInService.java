@@ -10,7 +10,7 @@ import android.widget.RemoteViews;
 
 import com.iptv.signin.R;
 
-import static com.iptv.signin.others.SignInApplication.mContext;
+import static com.iptv.signin.SignInApplication.mContext;
 
 public class SignInService extends Service {
 
