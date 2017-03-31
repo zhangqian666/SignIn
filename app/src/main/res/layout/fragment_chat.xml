@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg_color"
+    android:orientation="vertical"
+    tools:context="com.iptv.signin.ui.fragment.ChatFragment">
+
+    <include
+        android:id="@+id/toolbar_sign_in_fragment"
+        layout="@layout/toolbar_layout" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            android:src="@drawable/custom_services" />
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

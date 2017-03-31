@@ -1,6 +1,5 @@
 package com.iptv.signin.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.text.Selection;
@@ -8,36 +7,22 @@ import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import com.iptv.signin.R;
-import com.iptv.signin.bean.CommonData;
+import com.iptv.signin.bean.BaseResult;
 import com.iptv.signin.bean.LoginData;
+import com.iptv.signin.persenter.LoginPersenter;
+import com.iptv.signin.utils.LogUtil;
 import com.iptv.signin.utils.SpUtil;
-import com.tencent.open.utils.HttpUtils;
-import com.tencent.tauth.IRequestListener;
-import com.tencent.tauth.IUiListener;
-import com.tencent.tauth.Tencent;
-import com.tencent.tauth.UiError;
-
-import org.apache.http.conn.ConnectTimeoutException;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.SocketTimeoutException;
+import com.iptv.signin.view.LoginView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import static com.iptv.signin.SignInApplication.mContext;
 
 public class LoginActivity extends BaseActivity {
     private static final String TAG = "LoginActivity";
@@ -49,11 +34,7 @@ public class LoginActivity extends BaseActivity {
     CheckBox mCheckBox;
     @BindView(R.id.login_btn)
     Button mLoginBtn;
-    @BindView(R.id.register_btn)
-    Button mThirdLoginBtn;
 
-    private Tencent mTencent;
-    private BaseUiListener baseUiListener = new BaseUiListener();
     private Unbinder mBind;
     ;
 
@@ -63,16 +44,13 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         mBind = ButterKnife.bind(this);
         initUI();
+        autoLogin();
     }
-
 
     /**
      * 初始化界面
      */
     private void initUI() {
-        if (SpUtil.getLoginData() != null) {
-            mMobile.setText(SpUtil.getLoginData().getUserId());
-        }
         mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -92,110 +70,48 @@ public class LoginActivity extends BaseActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e(TAG, "onClick: " + mMobile.getText() + "---" + mPassword.getText());
-                if (CommonData.mUserId.equals(mMobile.getText().toString().trim()) && CommonData.mUserPassword.equals(mPassword.getText().toString().trim())) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    LoginData loginData = new LoginData();
-                    loginData.setUserId(mMobile.getText().toString().trim());
-                    loginData.setUserPassword(mPassword.getText().toString().trim());
-                    loginData.setUserHeadImage(CommonData.mUserHeadImage);
-                    loginData.setUserName(CommonData.mUserName);
-                    loginData.setUserDesc(CommonData.mUserDesc);
-                    SpUtil.saveLoginData(loginData);
-                    finish();
+                LogUtil.e("onClick: " + mMobile.getText() + "---" + mPassword.getText());
+                String mobile = mMobile.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
+                if ((!TextUtils.isEmpty(mobile)) & (!TextUtils.isEmpty(password))) {
+                    postLoginData(mobile, password);
                 } else {
-                    Toast.makeText(mContext, "密码/账号：空/不正确", Toast.LENGTH_SHORT).show();
+                    showShort("密码/账号：空");
                 }
             }
         });
-        mThirdLoginBtn.setOnClickListener(new View.OnClickListener() {
+    }
+
+    /**
+     * 登录账号
+     *
+     * @param mobile
+     * @param password
+     */
+    private void postLoginData(String mobile, String password) {
+        LoginPersenter loginPersenter = new LoginPersenter(new LoginView() {
             @Override
-            public void onClick(View v) {
-                login();
+            public void loginSuccess(boolean isSuccess, BaseResult<LoginData> mResult) {
+                SpUtil.setLoginData(mResult.getResult());
+                LogUtil.e(SpUtil.getLoginData().toString());
+                openActivityAndCloseThis(MainActivity.class);
+            }
+
+            @Override
+            public void loginError(String error) {
+                showShort("密码/账号：不正确" + error);
             }
         });
+        loginPersenter.getLoginData(mobile, password);
     }
 
     /**
-     * 腾讯第三方登录
+     * 自动登录腾讯
      */
-    public void login() {
-        mTencent = Tencent.createInstance(CommonData.tencentAppID, this.getApplicationContext());
-        if (!mTencent.isSessionValid()) {
-            mTencent.login(this, "all", baseUiListener);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Tencent.onActivityResultData(requestCode, resultCode, data, baseUiListener);
-    }
-
-    /**
-     * 腾讯登陆状态接口监听
-     */
-    private class BaseUiListener implements IUiListener {
-        @Override
-        public void onComplete(Object o) {
-            Log.e(TAG, "onComplete: " + o.toString());
-        }
-
-        @Override
-        public void onError(UiError e) {
-            Log.e(TAG, "onError: " + e.errorMessage);
-        }
-
-        @Override
-        public void onCancel() {
-            Log.e(TAG, "onCancel: ");
-        }
-    }
-
-    private class BaseApiListener implements IRequestListener {
-        @Override
-        public void onComplete(JSONObject jsonObject) {
-
-        }
-
-        @Override
-        public void onIOException(IOException e) {
-
-        }
-
-        @Override
-        public void onMalformedURLException(MalformedURLException e) {
-
-        }
-
-        @Override
-        public void onJSONException(JSONException e) {
-
-        }
-
-        @Override
-        public void onConnectTimeoutException(ConnectTimeoutException e) {
-
-        }
-
-        @Override
-        public void onSocketTimeoutException(SocketTimeoutException e) {
-
-        }
-
-        @Override
-        public void onNetworkUnavailableException(HttpUtils.NetworkUnavailableException e) {
-
-        }
-
-        @Override
-        public void onHttpStatusException(HttpUtils.HttpStatusException e) {
-
-        }
-
-        @Override
-        public void onUnknowException(Exception e) {
-
+    private void autoLogin() {
+        LoginData loginData = SpUtil.getLoginData();
+        if (!TextUtils.isEmpty(loginData.getUserId())) {
+            openActivityAndCloseThis(MainActivity.class);
         }
     }
 
@@ -204,4 +120,5 @@ public class LoginActivity extends BaseActivity {
         super.onDestroy();
         mBind.unbind();
     }
+
 }

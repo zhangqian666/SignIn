@@ -1,8 +1,17 @@
 package com.iptv.signin.ui.activity;
 
+import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.FrameLayout;
 
@@ -10,14 +19,24 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.iptv.signin.R;
-import com.iptv.signin.bean.CommonData;
-import com.iptv.signin.service.SignInService;
-import com.iptv.signin.ui.fragment.HomeFragment;
+import com.iptv.signin.bean.BaseResult;
+import com.iptv.signin.bean.LoginData;
+import com.iptv.signin.persenter.SignUserInfoPersenter;
+import com.iptv.signin.ui.fragment.ChatFragment;
 import com.iptv.signin.ui.fragment.MineFragment;
+import com.iptv.signin.ui.fragment.MovieFragment;
 import com.iptv.signin.ui.fragment.SignInFragment;
+import com.iptv.signin.utils.LogUtil;
+import com.iptv.signin.utils.SpUtil;
+import com.iptv.signin.view.SignUserInfoView;
+import com.tencent.tauth.Tencent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,10 +52,17 @@ public class MainActivity extends BaseActivity {
     FrameLayout mContain;
     @BindView(R.id.bottom_navigation_bar)
     BottomNavigationBar mBottomNavigationBar;
-    private HomeFragment mHomeFragment;
     private SignInFragment mSignInFragment;
+    private ChatFragment mChatFragment;
     private MineFragment mMineFragment;
     private Unbinder mBind;
+    private Tencent mTencent;
+    private MovieFragment mMovieFragment;
+    private BottomNavigationItem mineNavigationItem;
+    public int mBadgeItemNum = 0;
+    private boolean canShowMessage;
+    private BadgeItem mBadgeItem;
+    private int currentFragmentPosition = 0;
 
     /**
      * 初始化
@@ -50,14 +76,163 @@ public class MainActivity extends BaseActivity {
         mBind = ButterKnife.bind(this);
         //初始化 底部导航
         initButtomNavigation();
-        //开始后台签到服务
-        startSignInServer();
         //融云开始链接
-        initConnectRongIM(CommonData.token);
+        String userRongIMToken = SpUtil.getLoginData().getUserRongIMToken();
+        LogUtil.e(userRongIMToken);
+        initConnectRongIM(userRongIMToken);
+        initRegisterReceiver();
         //开始高德地图初始化
-        initAMap();
+        initPermissionRequest();
     }
 
+    private void initButtomNavigation() {
+        refreButtonNavigation();
+        setDefaultFragment();
+        mBottomNavigationBar.setTabSelectedListener(new BaseTabSelecerListener());
+    }
+
+    private void initPermissionRequest() {
+        List<String> permissionList = new ArrayList<>();
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        }
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            permissionList.add(Manifest.permission.READ_PHONE_STATE);
+        }
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (!permissionList.isEmpty()) {
+            String[] permissions = permissionList.toArray(new String[permissionList.size()]);
+            ActivityCompat.requestPermissions(MainActivity.this, permissions, 1);
+        } else {
+            initAMap();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0) {
+                    for (int result : grantResults) {
+                        if (result != PackageManager.PERMISSION_GRANTED) {
+                            showShort("必须同意才能正常使用定位功能");
+                        }
+                    }
+                    initAMap();
+                } else {
+                    showShort("发生未知错误");
+                }
+                break;
+        }
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        canShowMessage = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        canShowMessage = false;
+    }
+
+    private void initRegisterReceiver() {
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("action.rongim.receive.message");
+        registerReceiver(rongImMessageReceiver, intentFilter);
+    }
+    /********************************************* RongIM ***********************************************/
+    /**
+     * <p>连接服务器，在整个应用程序全局，只需要调用一次，需在 {@link #} 之后调用。</p>
+     * <p>如果调用此接口遇到连接失败，SDK 会自动启动重连机制进行最多10次重连，分别是1, 2, 4, 8, 16, 32, 64, 128, 256, 512秒后。
+     * 在这之后如果仍没有连接成功，还会在当检测到设备网络状态变化时再次进行重连。</p>
+     *
+     * @param token 从服务端获取的用户身份令牌（Token）。
+     * @return RongIM  客户端核心类的实例。
+     */
+    private void initConnectRongIM(String token) {
+        RongIM.connect(token, new RongIMClient.ConnectCallback() {
+            /**
+             * Token 错误。可以从下面两点检查 1.  Token 是否过期，如果过期您需要向 App Server 重新请求一个新的 Token
+             *                  2.  token 对应的 appKey 和工程里设置的 appKey 是否一致
+             */
+            @Override
+            public void onTokenIncorrect() {
+
+            }
+
+            /**
+             * 连接融云成功
+             * @param userid 当前 token 对应的用户 id
+             */
+            @Override
+            public void onSuccess(String userid) {
+                LogUtil.e("聊天登录成功 ，账号：" + userid);
+                showShort("聊天登录成功 ，账号：" + userid);
+
+            }
+
+            /**
+             * 连接融云失败
+             * @param errorCode 错误码，可到官网 查看错误码对应的注释
+             */
+            @Override
+            public void onError(RongIMClient.ErrorCode errorCode) {
+                LogUtil.e("聊天登录失败 ，erroCode：" + errorCode);
+                showShort("聊天登录失败 ，erroCode：" + errorCode);
+            }
+        });
+
+        /**
+         * 设置用户信息的提供者，供 RongIM 调用获取用户名称和头像信息。
+         *
+         * @param userInfoProvider 用户信息提供者。
+         * @param isCacheUserInfo  设置是否由 IMKit 来缓存用户信息。<br>
+         *                         如果 App 提供的 UserInfoProvider
+         *                         每次都需要通过网络请求用户数据，而不是将用户数据缓存到本地内存，会影响用户信息的加载速度；<br>
+         *                         此时最好将本参数设置为 true，由 IMKit 将用户信息缓存到本地内存中。
+         * @see UserInfoProvider
+         */
+        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+
+            @Override
+            public io.rong.imlib.model.UserInfo getUserInfo(String userId) {
+
+                return findUserById(userId);//根据 userId 去你的用户系统里查询对应的用户信息返回给融云 SDK。
+            }
+
+        }, true);
+    }
+
+    private io.rong.imlib.model.UserInfo findUserById(final String userId) {
+        SignUserInfoPersenter signUserInfoPersenter = new SignUserInfoPersenter(new SignUserInfoView() {
+            @Override
+            public void onSuccess(BaseResult<LoginData> result) {
+                LogUtil.e(result.getResult().toString());
+                io.rong.imlib.model.UserInfo userInfo = new io.rong.imlib.model.UserInfo(userId, result.getResult().getUserName(), Uri.parse(result.getResult().getUserHeadImage()));
+                RongIM.getInstance().refreshUserInfoCache(userInfo);
+            }
+
+            @Override
+            public void onError(String ex) {
+                LogUtil.e(ex);
+            }
+        });
+        signUserInfoPersenter.getSignUserInfo(userId);
+        return null;
+    }
+
+    /*********************************************
+     * 高德地图
+     ***********************************************/
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
     //声明AMapLocationClientOption对象
@@ -102,6 +277,7 @@ public class MainActivity extends BaseActivity {
         }
     };
 
+
     /**
      * 初始化高德地图
      */
@@ -130,119 +306,115 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    /**
-     * <p>连接服务器，在整个应用程序全局，只需要调用一次，需在 {@link #} 之后调用。</p>
-     * <p>如果调用此接口遇到连接失败，SDK 会自动启动重连机制进行最多10次重连，分别是1, 2, 4, 8, 16, 32, 64, 128, 256, 512秒后。
-     * 在这之后如果仍没有连接成功，还会在当检测到设备网络状态变化时再次进行重连。</p>
-     *
-     * @param token 从服务端获取的用户身份令牌（Token）。
-     * @return RongIM  客户端核心类的实例。
-     */
-    private void initConnectRongIM(String token) {
-        RongIM.connect(token, new RongIMClient.ConnectCallback() {
-            /**
-             * Token 错误。可以从下面两点检查 1.  Token 是否过期，如果过期您需要向 App Server 重新请求一个新的 Token
-             *                  2.  token 对应的 appKey 和工程里设置的 appKey 是否一致
-             */
-            @Override
-            public void onTokenIncorrect() {
-
-            }
-
-            /**
-             * 连接融云成功
-             * @param userid 当前 token 对应的用户 id
-             */
-            @Override
-            public void onSuccess(String userid) {
-                Log.d("LoginActivity", "--onSuccess" + userid);
-
-            }
-
-            /**
-             * 连接融云失败
-             * @param errorCode 错误码，可到官网 查看错误码对应的注释
-             */
-            @Override
-            public void onError(RongIMClient.ErrorCode errorCode) {
-
-            }
-        });
-
-    }
+    /********************************************* initview ***********************************************/
 
     /**
      * 初始化 底部导航
      */
-    private void initButtomNavigation() {
-        mBottomNavigationBar
-                .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp
-                        , getResources().getString(R.string.main_bottom_home)).setActiveColor(R.color.orange))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_location_on_white_24dp
-                        , getResources().getString(R.string.main_bottom_location)).setActiveColor(R.color.blue))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp
-                        , getResources().getString(R.string.main_bottom_mine)).setActiveColor(R.color.grey))
-                .setFirstSelectedPosition(0)
-                .initialise();
-        mBottomNavigationBar.setMode(BottomNavigationBar.MODE_DEFAULT);
-        mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_DEFAULT);
-        mBottomNavigationBar.setBarBackgroundColor(R.color.blue);
-
-        mBottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(int position) {
-                Log.e(TAG, "onTabSelected: " + position);
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                switch (position) {
-                    case 0:
-                        if (mHomeFragment == null) {
-                            mHomeFragment = HomeFragment.newInstance("", "");
-                        }
-                        fragmentTransaction.replace(R.id.main_contain, mHomeFragment);
-                        break;
-                    case 1:
-                        if (mSignInFragment == null) {
-                            mSignInFragment = SignInFragment.newInstance("", "");
-                        }
-                        fragmentTransaction.replace(R.id.main_contain, mSignInFragment);
-                        break;
-                    case 2:
-                        if (mMineFragment == null) {
-                            mMineFragment = MineFragment.newInstance("", "");
-                        }
-                        fragmentTransaction.replace(R.id.main_contain, mMineFragment);
-
-                        break;
-                    default:
-                        if (mHomeFragment == null) {
-                            mHomeFragment = HomeFragment.newInstance("", "");
-                        }
-                        fragmentTransaction.replace(R.id.main_contain, mHomeFragment);
-                        break;
-                }
-                fragmentTransaction.commit();
-
-            }
-
-            @Override
-            public void onTabUnselected(int position) {
-            }
-
-            @Override
-            public void onTabReselected(int position) {
-            }
-        });
-
-        setDefaultFragment();
+    private void refreButtonNavigation() {
+        mBottomNavigationBar.clearAll();
+        mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
+        mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+        mBottomNavigationBar.setBarBackgroundColor(R.color.colorPrimary);
+        if (mBadgeItemNum > 0) {
+            mBadgeItem = new BadgeItem()
+                    .setBorderWidth(1)
+                    .setBorderColorResource(R.color.white)
+                    .setBackgroundColorResource(R.color.red)
+                    .setText(mBadgeItemNum + "")
+                    .setTextColorResource(R.color.white)
+                    .setHideOnSelect(true);
+            mBottomNavigationBar
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_sign
+                            , getResources().getString(R.string.main_bottom_home)).setActiveColorResource(R.color.bottom_color_1))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_chat
+                            , getResources().getString(R.string.main_bottom_chat)).setActiveColorResource(R.color.bottom_color_2).setBadgeItem(mBadgeItem))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_movie
+                            , getResources().getString(R.string.main_bottom_movie)).setActiveColorResource(R.color.bottom_color_3))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_mine
+                            , getResources().getString(R.string.main_bottom_mine)).setActiveColorResource(R.color.bottom_color_4));
+        } else {
+            mBottomNavigationBar
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_sign
+                            , getResources().getString(R.string.main_bottom_home)).setActiveColorResource(R.color.bottom_color_1))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_chat
+                            , getResources().getString(R.string.main_bottom_chat)).setActiveColorResource(R.color.bottom_color_2))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_movie
+                            , getResources().getString(R.string.main_bottom_movie)).setActiveColorResource(R.color.bottom_color_3))
+                    .addItem(new BottomNavigationItem(R.drawable.icon_main_mine
+                            , getResources().getString(R.string.main_bottom_mine)).setActiveColorResource(R.color.bottom_color_4));
+        }
+        mBottomNavigationBar.setFirstSelectedPosition(currentFragmentPosition);
+        mBottomNavigationBar.initialise();
     }
+
+    private class BaseTabSelecerListener implements BottomNavigationBar.OnTabSelectedListener {
+
+
+        @Override
+        public void onTabSelected(int position) {
+            currentFragmentPosition = position;
+            Log.e(TAG, "onTabSelected: " + position);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            switch (position) {
+                case 0:
+                    if (mSignInFragment == null) {
+                        mSignInFragment = SignInFragment.newInstance("", "");
+                    }
+                    fragmentTransaction.replace(R.id.main_contain, mSignInFragment);
+                    break;
+                case 1:
+                    if (mBadgeItemNum > 0) {
+                        mBadgeItemNum = 0;
+                        refreButtonNavigation();
+                    }
+                    if (mChatFragment == null) {
+                        mChatFragment = ChatFragment.newInstance("", "");
+                    }
+                    fragmentTransaction.replace(R.id.main_contain, mChatFragment);
+                    break;
+                case 2:
+                    if (mMovieFragment == null) {
+                        mMovieFragment = MovieFragment.newInstance("", "");
+                    }
+                    fragmentTransaction.replace(R.id.main_contain, mMovieFragment);
+
+                    break;
+                case 3:
+                    if (mMineFragment == null) {
+                        mMineFragment = MineFragment.newInstance("", "");
+                    }
+                    fragmentTransaction.replace(R.id.main_contain, mMineFragment);
+
+                    break;
+                default:
+                    if (mSignInFragment == null) {
+                        mSignInFragment = SignInFragment.newInstance("", "");
+                    }
+                    fragmentTransaction.replace(R.id.main_contain, mSignInFragment);
+                    break;
+            }
+            fragmentTransaction.commit();
+
+        }
+
+        @Override
+        public void onTabUnselected(int position) {
+        }
+
+        @Override
+        public void onTabReselected(int position) {
+        }
+    }
+
 
     /**
      * 设置默认的
      */
     private void setDefaultFragment() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        mHomeFragment = HomeFragment.newInstance("", "");
-        fragmentTransaction.add(R.id.main_contain, mHomeFragment);
+        mSignInFragment = SignInFragment.newInstance("", "");
+        fragmentTransaction.add(R.id.main_contain, mSignInFragment);
         fragmentTransaction.commit();
     }
 
@@ -254,15 +426,7 @@ public class MainActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         mBind.unbind();
-    }
-
-
-    /**
-     * 开启后台监听签到服务
-     */
-    private void startSignInServer() {
-        Intent signInServerIntent = new Intent(this, SignInService.class);
-        startService(signInServerIntent);
+        unregisterReceiver(rongImMessageReceiver);
     }
 
 
@@ -270,4 +434,16 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         moveTaskToBack(false);
     }
+
+    BroadcastReceiver rongImMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (canShowMessage) {
+                mBadgeItemNum++;
+                if (currentFragmentPosition != 1) {
+                    refreButtonNavigation();
+                }
+            }
+        }
+    };
 }

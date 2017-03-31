@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
     tools:context="com.iptv.signin.ui.activity.PersonalDescActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -24,11 +26,11 @@
                 android:scaleType="centerCrop" />
 
             <android.support.design.widget.TabLayout
-                android:background="@color/green_100"
                 android:id="@+id/tab_personal_head"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:background="@color/green_100">
 
             </android.support.design.widget.TabLayout>
 

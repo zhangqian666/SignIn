@@ -66,12 +66,15 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             Log.e(TAG, "handleException: " );
             return false;
         }
+        //退出程序
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
         new Thread() {
             @Override
             public void run() {
                 Looper.prepare();
                 Log.e(TAG, "run: " );
-                showDialog(mContext,ex);
+//                showDialog(mContext,ex);
                 Looper.loop();
             }
         }.start();

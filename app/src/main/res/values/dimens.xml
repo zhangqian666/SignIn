@@ -32,4 +32,5 @@
     <dimen name="size_text_important">25sp</dimen>
     <dimen name="size_text_important_small">23sp</dimen>
     <dimen name="size_text_small">15sp</dimen>
+    <dimen name="size_text_small_normal">18sp</dimen>
 </resources>

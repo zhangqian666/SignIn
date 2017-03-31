@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <!-- 百度地图权限 -->
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -60,12 +59,14 @@
         <!-- 腾讯第三方登录 -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
-            android:noHistory="true"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1106007238" />
             </intent-filter>
         </activity>
@@ -138,7 +139,12 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.PersonalDescActivity"></activity>
+        <activity android:name=".ui.activity.PersonalDescActivity" />
+        <activity android:name=".ui.activity.MineItemSetActivity" />
+        <activity android:name=".ui.activity.BaseVideoViewActivity" />
+        <activity android:name=".ui.activity.MovieWebViewActivity" />
+        <activity android:name=".ui.activity.ChatAddFriendsActivity" />
+        <activity android:name=".ui.activity.MineFriendsActivity"></activity>
     </application>
 
 </manifest>

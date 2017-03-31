@@ -5,8 +5,6 @@ import android.util.Log;
 import com.iptv.signin.model.CrashHandlerPostModel;
 import com.iptv.signin.view.CrashHandlerPostView;
 
-import java.util.List;
-
 /**
  * Created by ZhangQian on 2017/3/13 0013.
  */
@@ -25,16 +23,6 @@ public class CrashHandlerPostPersenter implements CrashHandlerPostModel.CrashHan
     public void getErrorCrashHandlerResult(String stbid, String deviceInfo, String ex) {
         Log.e("TAG", "getErrorCrashHandlerResult: " );
         model.getErrorCrashHandlerResult(stbid,deviceInfo,ex);
-    }
-
-    @Override
-    public void setResult(Object result) {
-
-    }
-
-    @Override
-    public void setResulList(List<Object> resultList) {
-
     }
 
     @Override

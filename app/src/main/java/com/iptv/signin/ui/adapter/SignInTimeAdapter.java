@@ -53,14 +53,11 @@ public class SignInTimeAdapter extends RecyclerView.Adapter<SignInTimeAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         SignInTime signInTime = mSignInTimes.get(position);
-        if (!TextUtils.isEmpty(signInTime.getUser())) {
-            holder.userName.setText(signInTime.getUser());
+        if (!TextUtils.isEmpty(signInTime.getSignData())) {
+            holder.userTime.setText(signInTime.getSignData());
         }
-        if (!TextUtils.isEmpty(signInTime.getContent())) {
-            holder.userTime.setText(signInTime.getContent());
-        }
-        if (!TextUtils.isEmpty(signInTime.getLocalAddress())) {
-            holder.userLocal.setText(signInTime.getLocalAddress());
+        if (!TextUtils.isEmpty(signInTime.getSignAdress())) {
+            holder.userLocal.setText(signInTime.getSignAdress());
         }
     }
 
@@ -82,12 +79,10 @@ public class SignInTimeAdapter extends RecyclerView.Adapter<SignInTimeAdapter.Vi
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView userLocal;
-        TextView userName;
         TextView userTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            userName = (TextView) itemView.findViewById(R.id.user_name);
             userTime = (TextView) itemView.findViewById(R.id.user_time);
             userLocal = (TextView) itemView.findViewById(R.id.user_local);
 

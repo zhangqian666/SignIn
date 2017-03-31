@@ -2,6 +2,8 @@ package com.iptv.signin.model;
 
 import android.util.Log;
 
+import com.iptv.signin.listener.BaseModelListener;
+
 import java.io.IOException;
 
 import okhttp3.Call;

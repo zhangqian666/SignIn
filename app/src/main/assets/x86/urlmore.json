@@ -1,0 +1,401 @@
+{
+  "code": 200,
+  "message": "SUCCESS",
+  "success": true,
+  "data": {
+    "program": {
+      "actor": "薇诺娜·瑞德,克莱尔·丹妮斯,克尔斯滕·邓斯特",
+      "backgroundPicUrl": "",
+      "catProp": 0,
+      "clickNum": 0,
+      "content_channel": "10010101",
+      "corner": "1",
+      "cpCode": "CP0010",
+      "currentServal": 1,
+      "description": "南北战争时期，马奇先生有四个女儿，她们是梅、乔、贝恩和艾米。梅窈窕淑贤，乔泼辣直爽，贝恩温柔文静，艾米活泼可爱，四姐妹不仅有漂亮的容貌，更有一颗善良的心。劳里是劳伦斯老先生的孙子，是一位善良又不乏调皮的少年，是马奇家四姐妹的好朋友，和乔特别投缘。在经历了挫折之后，梅、乔和艾米都找到了幸福的爱情，但贝恩却因患病离开了人世。",
+      "director": "吉莉安·阿姆斯特朗",
+      "engname": "",
+      "id": 2939634,
+      "isDolby": 0,
+      "isFree": 0,
+      "isSeriaDrama": false,
+      "language": "英语",
+      "module": 2,
+      "name": "小妇人",
+      "nodeId": 118766,
+      "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/26/1482747660524_598457.jpg",
+      "ppvPath": "电影#片库#欧美大片",
+      "previewTime": "600",
+      "pubtime": "1482747943000",
+      "rateType": 0,
+      "region": "欧美",
+      "score": "8.0",
+      "showType": 1,
+      "tag": "movie",
+      "totalServal": 1,
+      "type": "爱情, 剧情",
+      "viewPoint": "经典小妇人再登银幕",
+      "year": "1994"
+    },
+    "tag": [
+      {
+        "rate": "1300",
+        "source": [
+          {
+            "cdn": "532B3BD30A73EF7E6527A70AF5A0926CAF595E24D64CF24AA0D0DC9AB4DF7D080E152F2EEB9F561B7FC70710105FED60EE69CB9EB0062E9DC0B51E24121A2DBD14B85A3220DFFE55DE21B91D71C75E1CADDC69C4CB6DF0C06B7DD430649FA2F1B6908C2FE74D48830D2A0236FE04B0647C09E54A2C22791F7D59E1B329BDC6C5",
+            "endTime": 6840000,
+            "fileId": 7667597,
+            "fileName": "小妇人",
+            "index": 1,
+            "length": 6840000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 997474232,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "高清"
+      },
+      {
+        "rate": "2200",
+        "source": [
+          {
+            "cdn": "57E9B2F76C54BDE82E19E17EC1A914278BFFE5CEA30F4EA3C67E0C3B4C9371FC6169AF1E72DBCCA2B2A71F6FBE00BBB75993735BB6E9D73BB13F5AEBEEAD75F7900B7B14E6491656C5E54BFCD8AFE48DBADCF791424C6589EBB5F1C7A3289790438D06DFC08F15AFF8C136E3C817FCA3CE9F5F2599EF88A6275E8DF2341B1A30",
+            "endTime": 6840000,
+            "fileId": 7667595,
+            "fileName": "小妇人",
+            "index": 1,
+            "length": 6840000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 2136666812,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "超清"
+      },
+      {
+        "rate": "3800",
+        "source": [
+          {
+            "cdn": "8D622635049543D6D36ED65A63E011BB92E3915924EAE7A4C6DDAB38C7603D3F3F51279F53D794BF5A3C81D6EF5BA6A85C7D0833375BA61BC5622E7DD9106F02A7B0EA77FCC694238B62FE50174B49F2B33F4A311F04D7DE85445725A851B4966FDDF761B68659AF73B96C043F68FF6F58BD5268756CFD4710A36B103B4CD493",
+            "endTime": 6840000,
+            "fileId": 7667598,
+            "fileName": "小妇人",
+            "index": 1,
+            "length": 6840000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 0,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "蓝光"
+      }
+    ],
+    "watching": [
+      {
+        "corner": "1",
+        "id": 2880504,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2880504&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "晚期四重奏",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/20/1476931074826_551041.jpg",
+        "score": "7.5",
+        "viewPoint": "三大奥斯卡级别的戏骨集体飙演技"
+      },
+      {
+        "corner": "1",
+        "id": 2942856,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2942856&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "追捕野蛮人",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/29/1482992838229_771954.jpg",
+        "score": "8.0",
+        "viewPoint": "熊孩子出没请注意！小胖子的叛逆之路"
+      },
+      {
+        "corner": "1",
+        "id": 2936744,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2936744&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "点球成金",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/23/1482467669984_468469.jpg",
+        "score": "8.2",
+        "viewPoint": "皮特搭档菜鸟共整最烂球队"
+      },
+      {
+        "corner": "1",
+        "id": 2944220,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2944220&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "绝代艳后",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/30/1483082122990_290615.jpg",
+        "score": "7.5",
+        "viewPoint": "邓斯特演绎法国王后奢靡一生"
+      },
+      {
+        "corner": "1",
+        "id": 2948138,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2948138&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "甜心先生",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2017-01/03/1483433882005_536366.jpg",
+        "score": "7.4",
+        "viewPoint": "看阿汤哥如何玩转职场 小贝夫妇第一次约会看的电影"
+      },
+      {
+        "corner": "1",
+        "id": 1418306,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1418306&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "哈德森之鹰",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-02/05/1423130113324_608592.jpg",
+        "score": "5.9",
+        "viewPoint": "布鲁斯早期无厘头搞笑作品"
+      },
+      {
+        "corner": "1",
+        "id": 2230681,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2230681&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "绯闻计划",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-10/26/1445850133266_914630.jpg",
+        "score": "6.6",
+        "viewPoint": "一场轰轰烈烈的\"破处\"传闻"
+      },
+      {
+        "corner": "1",
+        "id": 2598022,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2598022&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "偷龙转凤",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-03/07/1457329544196_921162.jpg",
+        "score": "8.1",
+        "viewPoint": "女神赫本与伯乐恩师惠勒又一次愉快的轻喜剧合作"
+      }
+    ],
+    "recommend": [
+      {
+        "corner": "1",
+        "id": 2378754,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2378754&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "伊丽莎白镇",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-12/14/1450065041531_161458.jpg",
+        "score": "7.4",
+        "viewPoint": "精灵王子携手蜘蛛女共谱暖心爱情"
+      },
+      {
+        "corner": "0",
+        "id": 2348514,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2348514&nodeId=118763",
+        "layoutCode": "Detail_Movie",
+        "name": "迪兹先生",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-12/03/1449131702904_773660.jpg",
+        "score": "6.5",
+        "viewPoint": "一夜致富的完美先生和狗仔美女的爱情故事"
+      },
+      {
+        "corner": "1",
+        "id": 1473311,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1473311&nodeId=118763",
+        "layoutCode": "Detail_Movie",
+        "name": "纯真年代",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-03/31/1427770374754_363683.jpg",
+        "score": "8.2",
+        "viewPoint": "美国版红玫瑰与白玫瑰"
+      },
+      {
+        "corner": "1",
+        "id": 2880504,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2880504&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "晚期四重奏",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/20/1476931074826_551041.jpg",
+        "score": "7.5",
+        "viewPoint": "三大奥斯卡级别的戏骨集体飙演技"
+      },
+      {
+        "corner": "1",
+        "id": 2942856,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2942856&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "追捕野蛮人",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/29/1482992838229_771954.jpg",
+        "score": "8.0",
+        "viewPoint": "熊孩子出没请注意！小胖子的叛逆之路"
+      },
+      {
+        "corner": "1",
+        "id": 2936744,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2936744&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "点球成金",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/23/1482467669984_468469.jpg",
+        "score": "8.2",
+        "viewPoint": "皮特搭档菜鸟共整最烂球队"
+      },
+      {
+        "corner": "1",
+        "id": 2944220,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2944220&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "绝代艳后",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/30/1483082122990_290615.jpg",
+        "score": "7.5",
+        "viewPoint": "邓斯特演绎法国王后奢靡一生"
+      },
+      {
+        "corner": "1",
+        "id": 2948138,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2948138&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "甜心先生",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2017-01/03/1483433882005_536366.jpg",
+        "score": "7.4",
+        "viewPoint": "看阿汤哥如何玩转职场 小贝夫妇第一次约会看的电影"
+      },
+      {
+        "corner": "1",
+        "id": 1418306,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1418306&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "哈德森之鹰",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-02/05/1423130113324_608592.jpg",
+        "score": "5.9",
+        "viewPoint": "布鲁斯早期无厘头搞笑作品"
+      },
+      {
+        "corner": "1",
+        "id": 2230681,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2230681&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "绯闻计划",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-10/26/1445850133266_914630.jpg",
+        "score": "6.6",
+        "viewPoint": "一场轰轰烈烈的\"破处\"传闻"
+      },
+      {
+        "corner": "1",
+        "id": 2598022,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2598022&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "偷龙转凤",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-03/07/1457329544196_921162.jpg",
+        "score": "8.1",
+        "viewPoint": "女神赫本与伯乐恩师惠勒又一次愉快的轻喜剧合作"
+      },
+      {
+        "corner": "1",
+        "id": 525871,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=525871&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "生化危机5：惩罚",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201306/17/cms_30046528976566214833198.jpg",
+        "score": "5.5",
+        "viewPoint": "乌克兰超模米拉·乔沃维奇"
+      },
+      {
+        "corner": "1",
+        "id": 899274,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=899274&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "永不妥协",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2014-02/23/1393137042338_399620.jpg",
+        "score": "8.2",
+        "viewPoint": "单身母亲维护自己的权益"
+      },
+      {
+        "corner": "1",
+        "id": 2806650,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2806650&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "未知死亡",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-08/11/1470892543762_989771.jpg",
+        "score": "8.0",
+        "viewPoint": "另类灰姑娘故事"
+      },
+      {
+        "corner": "1",
+        "id": 1982808,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1982808&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "十字追杀令",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-07/24/1437715863317_650040.jpg",
+        "score": "3.4",
+        "viewPoint": "同邪恶力量作战"
+      },
+      {
+        "corner": "0",
+        "id": 1042620,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1042620&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "笨贼妙探",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201407/14/cms_4452131403658694592748.jpg",
+        "score": "7.5",
+        "viewPoint": "聒噪的可爱大盗，笨笨的菜鸟警察，一根筋的黑人同伙，阴险的团队叛徒"
+      },
+      {
+        "corner": "1",
+        "id": 2934004,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2934004&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "烈火终结者",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/20/1482219083251_642079.jpg",
+        "score": "7.1",
+        "viewPoint": "德尼罗演绎狂热的偏执狂"
+      },
+      {
+        "corner": "1",
+        "id": 2932584,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2932584&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "美食祈祷和恋爱",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/19/1482133171217_608987.jpg",
+        "score": "7.3",
+        "viewPoint": "意大利的美食 印度的祈祷 巴厘岛的爱情"
+      },
+      {
+        "corner": "1",
+        "id": 2930456,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2930456&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "保卫者",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/16/1481882261052_985376.jpg",
+        "score": "7.5",
+        "viewPoint": "中年版海扁王 堂吉诃德式的“蜜蜂侠”"
+      },
+      {
+        "corner": "1",
+        "id": 2930455,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2930455&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "我是间谍",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/16/1481881841894_989130.jpg",
+        "score": "6.1",
+        "viewPoint": "爆笑黑白配携手合作"
+      }
+    ],
+    "videoPageinfo": {
+      "pageSize": 50,
+      "total": 1,
+      "pageNum": 1,
+      "currentPage": 1,
+      "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/Video?id=2939634&total=1"
+    },
+    "actorInfomation": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=actor&newId=2939634",
+    "label": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=label&newId=2939634",
+    "douBan": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=douBan&newId=2939634",
+    "poster": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=poster&newId=2939634"
+  }
+}

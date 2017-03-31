@@ -8,12 +8,14 @@
     <color name="default_bg_color">#7d8ace</color>
     <color name="transparent_normal">#55ffffff</color>
     <color name="bg_generate_color">#ebebeb</color>
+    <color name="bg_generate_color_80">#80ebebeb</color>
+    <color name="bg_black_color_80">#80000000</color>
     <color name="text_black_color">#353535</color>
     <color name="text_grey_color">#999999</color>
 
     <color name="font_title">#333</color>
     <color name="font_text">#666</color>
-    <color name="font_info">#999</color>
+    <color name="font_info">#80999999</color>
     <color name="font_tips">#CCC</color>
     <color name="green_100">#bcf2eb</color>
 
@@ -28,7 +30,12 @@
     <color name="white">#ffffff</color>
     <color name="teal">#00796B</color>
     <color name="brown">#8D6E63</color>
+    <color name="red">#FF4081</color>
     <color name="blue">#2196F3</color>
     <color name="grey">#607D8B</color>
     <color name="orange">#F57C00</color>
+    <color name="bottom_color_1">#2196F3</color>
+    <color name="bottom_color_2">#05dacd</color>
+    <color name="bottom_color_3">#0fda05</color>
+    <color name="bottom_color_4">#cede05</color>
 </resources>

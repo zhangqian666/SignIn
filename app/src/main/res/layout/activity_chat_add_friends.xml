@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chat_add_friends"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.iptv.signin.ui.activity.ChatAddFriendsActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:hint="按手机号查找">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/user_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:textColor="@color/font_title"
+                android:textSize="@dimen/size_text_small" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/bg_btn_main"
+            android:text="查找"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size_text_small" />
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/bg_generate_color"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/user_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

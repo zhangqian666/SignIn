@@ -6,68 +6,68 @@ import org.litepal.crud.DataSupport;
  * Created by ZhangQian on 2017/2/19 0019.
  */
 
-public class SignInTime extends DataSupport{
-    private int type;
-    private String mChineseTime;
-    private long mLongTime;
-    private String content;
-    private String title;
-    private String user;
-    private String localAddress;
+public class SignInTime extends DataSupport {
+    String userId;
+    String signUserName;
+    String signData;
+    String signAdress;
+    String signDesc;
+    String signUserImage;
+    String signId;
 
-    public String getLocalAddress() {
-        return localAddress;
+    public String getSignId() {
+        return signId;
     }
 
-    public void setLocalAddress(String localAddress) {
-        this.localAddress = localAddress;
+    public void setSignId(String signId) {
+        this.signId = signId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSignUserName() {
+        return signUserName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSignUserName(String signUserName) {
+        this.signUserName = signUserName;
     }
 
-    public String getUser() {
-        return user;
+    public String getSignData() {
+        return signData;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setSignData(String signData) {
+        this.signData = signData;
     }
 
-    public int getType() {
-        return type;
+    public String getSignAdress() {
+        return signAdress;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setSignAdress(String signAdress) {
+        this.signAdress = signAdress;
     }
 
-    public String getmChineseTime() {
-        return mChineseTime;
+    public String getSignDesc() {
+        return signDesc;
     }
 
-    public void setmChineseTime(String mChineseTime) {
-        this.mChineseTime = mChineseTime;
+    public void setSignDesc(String signDesc) {
+        this.signDesc = signDesc;
     }
 
-    public long getmLongTime() {
-        return mLongTime;
+    public String getSignUserImage() {
+        return signUserImage;
     }
 
-    public void setmLongTime(long mLongTime) {
-        this.mLongTime = mLongTime;
+    public void setSignUserImage(String signUserImage) {
+        this.signUserImage = signUserImage;
     }
 
-    public String getContent() {
-        return content;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

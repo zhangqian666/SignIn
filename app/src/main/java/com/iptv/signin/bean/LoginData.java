@@ -11,8 +11,53 @@ public class LoginData extends DataSupport{
     private String userPassword;
     private String userId;
     private String userToken;
+    private String userRongIMToken;
+    private String userRongIMId;
     private String userHeadImage;
     private String userDesc;
+    private String userQQopenId;
+    private String userQQAccessToken;
+    private String userQQExpires;
+
+    public String getUserQQAccessToken() {
+        return userQQAccessToken;
+    }
+
+    public void setUserQQAccessToken(String userQQAccessToken) {
+        this.userQQAccessToken = userQQAccessToken;
+    }
+
+    public String getUserQQExpires() {
+        return userQQExpires;
+    }
+
+    public void setUserQQExpires(String userQQExpires) {
+        this.userQQExpires = userQQExpires;
+    }
+
+    public String getUserQQopenId() {
+        return userQQopenId;
+    }
+
+    public void setUserQQopenId(String userQQopenId) {
+        this.userQQopenId = userQQopenId;
+    }
+
+    public String getUserRongIMId() {
+        return userRongIMId;
+    }
+
+    public void setUserRongIMId(String userRongIMId) {
+        this.userRongIMId = userRongIMId;
+    }
+
+    public String getUserRongIMToken() {
+        return userRongIMToken;
+    }
+
+    public void setUserRongIMToken(String userRongIMToken) {
+        this.userRongIMToken = userRongIMToken;
+    }
 
     public String getUserDesc() {
         return userDesc;
@@ -69,8 +114,11 @@ public class LoginData extends DataSupport{
                 ", userPassword='" + userPassword + '\'' +
                 ", userId='" + userId + '\'' +
                 ", userToken='" + userToken + '\'' +
+                ", userRongIMToken='" + userRongIMToken + '\'' +
+                ", userRongIMId='" + userRongIMId + '\'' +
                 ", userHeadImage='" + userHeadImage + '\'' +
                 ", userDesc='" + userDesc + '\'' +
+                ", userQQopenId='" + userQQopenId + '\'' +
                 '}';
     }
 }

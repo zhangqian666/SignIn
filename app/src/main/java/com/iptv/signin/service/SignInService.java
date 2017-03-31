@@ -41,7 +41,6 @@ public class SignInService extends Service {
                 .setContentIntent(pendingIntent).build();
         startForeground(1, build);
 
-
     }
 
     @Override

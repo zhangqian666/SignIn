@@ -42,17 +42,10 @@ public class SignInPersenter implements SignInModel.SignInModelListener {
     /**
      * 按条件删除数据
      * @param signInTime
-     * @param time
      */
-    public void deleteSignInMessage(SignInTime signInTime, String time) {
-        signInModel.deleteSignInMessage(signInTime, time);
+    public void deleteSignInMessage(SignInTime signInTime) {
+        signInModel.deleteSignInMessage(signInTime);
     }
-
-    @Override
-    public void setResult(SignInTime result) {
-
-    }
-
     @Override
     public void setResulList(List<SignInTime> resultList) {
         signInView.setAllSignInMessage(resultList);

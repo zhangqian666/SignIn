@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mine_item_set"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.iptv.signin.ui.activity.MineItemSetActivity">
+
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:button="@drawable/bg_mine_set_btn"
+        android:checked="false"
+        android:text="显示在下拉菜单"
+        android:textSize="@dimen/size_text_normal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/three_btn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_btn_main"
+        android:text="绑定QQ"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/size_text_normal" />
+
+    <Button
+        android:id="@+id/loginout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_btn_main"
+        android:text="退出登录"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/size_text_normal" />
+</LinearLayout>

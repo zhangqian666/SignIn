@@ -1,0 +1,422 @@
+{//http://hlsglsb.wasu.tv/1482988708029_360720.m3u8?action=hls&Contentid=CP23010020161228147014
+  "code": 200,
+  "message": "SUCCESS",
+  "success": true,
+  "data": {
+    "program": {
+      "actor": "汤姆·汉克斯,菲丽希缇·琼斯,伊尔凡·可汗",
+      "backgroundPicUrl": "",
+      "catProp": 0,
+      "clickNum": 0,
+      "content_channel": "10010101",
+      "corner": "1",
+      "cpCode": "CP0010",
+      "currentServal": 1,
+      "description": "著名符号学专家兰登跟随一系列线索，一步步解密伟大诗人但丁的故事。失忆的兰登在意大利的一家医院醒来后，与女医生西恩娜·布鲁克斯联手，希望她能帮助他找回记忆。他们一起穿越欧洲，与时间赛跑，竭力阻止一场祸及全球的阴谋。",
+      "director": "朗·霍华德",
+      "engname": "",
+      "id": 2942600,
+      "isDolby": 0,
+      "isFree": 0,
+      "isSeriaDrama": false,
+      "language": "英语",
+      "module": 2,
+      "name": "但丁密码 Inferno (2016)",
+      "nodeId": 118766,
+      "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/29/1482988541467_324505.jpg",
+      "ppvPath": "电影#片库#欧美大片",
+      "previewTime": "600",
+      "pubtime": "1482988825000",
+      "rateType": 0,
+      "region": "欧美",
+      "score": "6.3",
+      "showType": 1,
+      "tag": "movie",
+      "totalServal": 1,
+      "type": "悬疑, 惊悚",
+      "viewPoint": "奥斯卡黄金阵容 全新冒险烧脑巨制",
+      "year": "2016"
+    },
+    "tag": [
+      {
+        "rate": "1300",
+        "source": [
+          {
+            "cdn": "557E907DEB240C9F0BDCCE9928D81422B6397BFCD8329FF9BAA82AA04797B2FBDAB613347C0C7EFF999AFD072B503C5D63FFE357240AEEC1B66EBD8369EA03FF02975160A0CE5BE1C759C8E1E9F40131990E7E2D6B4AF7A552E196B2A84AC3E5AAFE036C04653D602188C215751BEA229B89BFF9C831E53F3DC620401DF310E6",
+            "endTime": 6999000,
+            "fileId": 7677085,
+            "fileName": "但丁密码",
+            "index": 1,
+            "length": 6999000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 1030403560,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "高清"
+      },
+      {
+        "rate": "2200",
+        "source": [
+          {
+            "cdn": "5FFB24199FCBD079FB43D31C618A3BC3DC3FC713EB1B3A1B7A09E7EFD6B4188F5938D9D3DC61317E66489459EA2F2A78AB697E7644F40B25F5F1B9889E4932096EC2CAAB78F7FE4C5BDB2A9D3F475CEA95E87A528830BE5D2E00CE504EBEA798443BF22256D34F644A896B33B5E4E9C045D6E7FA1C4525E4E386FD0F5711BA96",
+            "endTime": 6999000,
+            "fileId": 7677086,
+            "fileName": "但丁密码",
+            "index": 1,
+            "length": 6999000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 0,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "超清"
+      },
+      {
+        "rate": "3800",
+        "source": [
+          {
+            "cdn": "110B51A73A0AD72C6318CD8BFE104D44B5E45B07F78D7E67F154DB24063B8466499DE2EE9319D01B5884C30019029E8444D64ACC158200D31370473AAE5CD51724765BAF8F5FEDB766B2DCBAA2F5C43D1113C8CBC5C2FCBDB73BDFE5BF8BD8852E337FEF1F9A4C017BEF7B7F6D18EDB2EC3BD149DB0EC41D7218733A6579F610",
+            "endTime": 6999000,
+            "fileId": 7677087,
+            "fileName": "但丁密码",
+            "index": 1,
+            "length": 6999000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 0,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "蓝光"
+      },
+      {
+        "rate": "7000",
+        "source": [
+          {
+            "cdn": "9883F05CAED5DCD47B482E1F8887DC83A8E0B59B91B99C35C7ED0EBE657CA69E9C06F27E29F3B92D11CBDCBA4C251DBEF85AA21FACCE48718F7BAE0C909D683FC109D7397EF19FB2606782A70BC42D169186DA627E4D9D57606454E0A05D8B263414D850FD84D76F03D39B80083CC60D4EFEEBC74BCF500F4E3006FC795D9BCB",
+            "endTime": 6999000,
+            "fileId": 7677084,
+            "fileName": "但丁密码",
+            "index": 1,
+            "length": 6999000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 0,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "标清"
+      }
+    ],
+    "watching": [
+      {
+        "corner": "2",
+        "id": 2979973,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2979973&nodeId=146934",
+        "layoutCode": "Detail_Movie",
+        "name": "但丁密码",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/2017/1/31/195/195/2017013103135856773b4fbb0.jpg",
+        "score": "",
+        "viewPoint": ""
+      },
+      {
+        "corner": "0",
+        "id": 2980112,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2980112&nodeId=147078",
+        "layoutCode": "Detail_Movie",
+        "name": "但丁密码 Inferno (2016)",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201701/31/cms_70111033402959976943021.jpg",
+        "score": "6.3",
+        "viewPoint": "奥斯卡黄金阵容 全新冒险烧脑巨制"
+      },
+      {
+        "corner": "0",
+        "id": 2859534,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2859534&nodeId=77260",
+        "layoutCode": "Detail_News",
+        "name": "《但丁密码》首发预告",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201609/28/cms_34529796554271670546484.jpg",
+        "score": "",
+        "viewPoint": "《但丁密码》首发预告:汤姆·汉克斯解码《神曲》拯救人类"
+      },
+      {
+        "corner": "0",
+        "id": 2859529,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2859529&nodeId=77260",
+        "layoutCode": "Detail_News",
+        "name": "《但丁密码》“神秘线索”特辑",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201609/28/cms_16498219809657038116286.jpg",
+        "score": "",
+        "viewPoint": "《但丁密码》发布“神秘线索”特辑:汤姆·汉克斯卷入阴谋解码终极谜题"
+      },
+      {
+        "corner": "2",
+        "id": 2739530,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2739530&nodeId=146934",
+        "layoutCode": "Detail_Movie",
+        "name": "美人鱼（影院）",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/2016/5/19/178/178/2016051910302598f8d887c2.jpg",
+        "score": "",
+        "viewPoint": ""
+      },
+      {
+        "corner": "0",
+        "id": 2370117,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2370117&nodeId=77260",
+        "layoutCode": "Detail_Movie",
+        "name": "《极速风流》主演专访视频",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201512/08/cms_827018717878584892220.jpg",
+        "score": "",
+        "viewPoint": "在赛车场上，每秒钟都有可能铸造永恒"
+      },
+      {
+        "corner": "0",
+        "id": 2370114,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2370114&nodeId=77260",
+        "layoutCode": "Detail_Movie",
+        "name": "《极速风流》竞速版预告",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201512/08/cms_26625299513372552789737.jpg",
+        "score": "",
+        "viewPoint": "在赛车场上，每秒钟都有可能铸造永恒"
+      },
+      {
+        "corner": "1",
+        "id": 1530338,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1530338&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "贵族大盗",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-05/21/1432176272050_118565.jpg",
+        "score": "5.2",
+        "viewPoint": "“杰克船长”化身“贵族大盗” 没钱也任性"
+      }
+    ],
+    "recommend": [
+      {
+        "corner": "0",
+        "id": 2980112,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2980112&nodeId=147078",
+        "layoutCode": "Detail_Movie",
+        "name": "但丁密码 Inferno (2016)",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201701/31/cms_70111033402959976943021.jpg",
+        "score": "6.3",
+        "viewPoint": "奥斯卡黄金阵容 全新冒险烧脑巨制"
+      },
+      {
+        "corner": "1",
+        "id": 2597837,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2597837&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "毁灭之路",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-03/07/1457318276203_144824.jpg",
+        "score": "7.7",
+        "viewPoint": "超强明星阵容讲述父子之情的黑帮电影"
+      },
+      {
+        "corner": "0",
+        "id": 2011853,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2011853&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "达芬奇密码",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-08/07/1438922375345_975147.jpg",
+        "score": "7.1",
+        "viewPoint": "改编自同名全球畅销悬疑奇幻小说，揭秘一代巨匠达芬奇名作背后的神秘含义"
+      },
+      {
+        "corner": "0",
+        "id": 1972864,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1972864&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "陵园路口",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-07/21/1437447010900_852500.jpg",
+        "score": "7.6",
+        "viewPoint": "一众英伦帅哥刮起了一股怀旧英伦风"
+      },
+      {
+        "corner": "1",
+        "id": 1010180,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1010180&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "阿甘正传",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2014-06/17/1402974636401_577628.jpg",
+        "score": "9.4",
+        "viewPoint": "第67届奥斯卡金像奖最佳影片"
+      },
+      {
+        "corner": "0",
+        "id": 260909,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=260909&nodeId=131901",
+        "layoutCode": "Detail_Movie",
+        "name": "特别响，非常近",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www221/2012-05/30/1338375933843_1893.jpg",
+        "score": "7.6",
+        "viewPoint": "第85届奥斯卡热门获奖影片,知名导演史蒂芬·戴德利为911十周年所奉献的作品"
+      },
+      {
+        "corner": "1",
+        "id": 1530338,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=1530338&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "贵族大盗",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-05/21/1432176272050_118565.jpg",
+        "score": "5.2",
+        "viewPoint": "“杰克船长”化身“贵族大盗” 没钱也任性"
+      },
+      {
+        "corner": "1",
+        "id": 2640269,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2640269&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "东方",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-04/13/1460541240038_697558.jpg",
+        "score": "6.5",
+        "viewPoint": "浓厚文艺气息商业间谍片，环保与卧底题材相结合"
+      },
+      {
+        "corner": "1",
+        "id": 2640281,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2640281&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "珍爱泉源",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-04/13/1460541562599_946640.jpg",
+        "score": "7.0",
+        "viewPoint": "金刚狼收起钢爪演绎千年爱情故事"
+      },
+      {
+        "corner": "1",
+        "id": 2601791,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2601791&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "地球停转之日",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-03/10/1457602591172_118782.jpg",
+        "score": "5.7",
+        "viewPoint": "翻拍五十年代的影史经典电影"
+      },
+      {
+        "corner": "1",
+        "id": 517689,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=517689&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "蝙蝠侠：侠影之谜",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2012-12/27/1356579910966_212878.jpg",
+        "score": "8.1",
+        "viewPoint": "蝙蝠侠开始了对抗笼罩在高谭市的黑暗。"
+      },
+      {
+        "corner": "1",
+        "id": 2097039,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2097039&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "黑衣人2",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-09/11/1441904106747_243251.jpg",
+        "score": "7.5",
+        "viewPoint": "汤米·李·琼斯联手威尔·史密斯“黑衣人”归来"
+      },
+      {
+        "corner": "1",
+        "id": 2150318,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2150318&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "地狱男爵",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-09/29/1443509099013_963113.jpg",
+        "score": "6.9",
+        "viewPoint": "另类的美式超级英雄拯救世界"
+      },
+      {
+        "corner": "1",
+        "id": 2802717,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2802717&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "越位",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-08/08/1470654341587_212008.jpg",
+        "score": "7.7",
+        "viewPoint": "要像热爱世界杯一样热爱伊朗电影"
+      },
+      {
+        "corner": "1",
+        "id": 2817675,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2817675&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "兔子洞",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-08/22/1471837860639_428304.jpg",
+        "score": "7.3",
+        "viewPoint": "妮可基德曼与\"双面人\"演纠结夫妻 美国失独家庭悲歌"
+      },
+      {
+        "corner": "1",
+        "id": 2942737,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2942737&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "掌上明珠",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/29/1482991077954_875477.jpg",
+        "score": "5.6",
+        "viewPoint": "女孩与导盲马的故事"
+      },
+      {
+        "corner": "1",
+        "id": 2939634,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2939634&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "小妇人",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/26/1482747660524_598457.jpg",
+        "score": "8.0",
+        "viewPoint": "经典小妇人再登银幕"
+      },
+      {
+        "corner": "1",
+        "id": 2880504,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2880504&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "晚期四重奏",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/20/1476931074826_551041.jpg",
+        "score": "7.5",
+        "viewPoint": "三大奥斯卡级别的戏骨集体飙演技"
+      },
+      {
+        "corner": "1",
+        "id": 2942856,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2942856&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "追捕野蛮人",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/29/1482992838229_771954.jpg",
+        "score": "8.0",
+        "viewPoint": "熊孩子出没请注意！小胖子的叛逆之路"
+      },
+      {
+        "corner": "1",
+        "id": 2936744,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2936744&nodeId=118766",
+        "layoutCode": "Detail_Movie",
+        "name": "点球成金",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/23/1482467669984_468469.jpg",
+        "score": "8.2",
+        "viewPoint": "皮特搭档菜鸟共整最烂球队"
+      }
+    ],
+    "videoPageinfo": {
+      "pageSize": 50,
+      "total": 1,
+      "pageNum": 1,
+      "currentPage": 1,
+      "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/Video?id=2942600&total=1"
+    },
+    "actorInfomation": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=actor&newId=2942600",
+    "label": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=label&newId=2942600",
+    "douBan": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=douBan&newId=2942600",
+    "poster": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=poster&newId=2942600"
+  }
+}

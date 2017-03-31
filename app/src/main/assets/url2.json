@@ -1,0 +1,359 @@
+{
+  "code": 200 ,//http://hlsglsb.wasu.tv/1482988708029_360720.m3u8?action=hls&Contentid=CP23010020161228147014.
+  "message": "SUCCESS",
+  "success": true,
+  "data": {
+    "program": {
+      "actor": "佐久间信子,田岛令子,岡野浩介",
+      "backgroundPicUrl": "",
+      "catProp": 0,
+      "clickNum": 0,
+      "content_channel": "10010101",
+      "corner": "1",
+      "cpCode": "CP2301",
+      "currentServal": 1,
+      "description": "小女孩明日香，自幼便受到母亲的精神虐待，导致明日香的心理受创而无法开口说话，在祖父母不停的鼓励下，终於治愈了她的心病，并且愿意对人产生信赖感，也找到了活下去的力量。",
+      "director": "出崎哲",
+      "engname": "",
+      "id": 2837055,
+      "isDolby": 0,
+      "isFree": 0,
+      "isSeriaDrama": false,
+      "language": "日语",
+      "module": 2,
+      "name": "再生之日",
+      "nodeId": 118772,
+      "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201702/09/cms_36745638107100239109764.jpg",
+      "ppvPath": "电影#片库#亲子之旅",
+      "previewTime": "600",
+      "pubtime": "1473067364000",
+      "rateType": 0,
+      "region": "韩日",
+      "score": "8.5",
+      "showType": 1,
+      "tag": "movie",
+      "totalServal": 1,
+      "type": "治愈, 亲子, 日漫, 励志",
+      "viewPoint": "日本教育部推荐之一",
+      "year": "1999"
+    },
+    "tag": [
+      {
+        "rate": "1300",
+        "source": [
+          {
+            "cdn": "6E89B5437772DA1B9D1712D4BF00CC2E12FC80F6693E1916D6F0A53241CABB193148AFA723921FF52EB4654EBF144E5EB9F8EFEC93A63FA7DDECB5EB981F6606B33FFC7AE603267D3E7561BD3E0D35D1D24582D589C86910D275A2CBF81F04B0FD55A4EAEB58948186AAE5C43A1125928848F82BF2F1910462DDC25699FE7542",
+            "endTime": 4800000,
+            "fileId": 7282983,
+            "fileName": "再生之日",
+            "index": 1,
+            "length": 4800000,
+            "ottEarly": "0",
+            "ottFee": "0",
+            "picUrl": "",
+            "ppvId": 0,
+            "size": 697679092,
+            "startTime": 0,
+            "viewPoint": ""
+          }
+        ],
+        "tag": "高清"
+      }
+    ],
+    "watching": [
+      {
+        "corner": "1",
+        "id": 2837511,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2837511&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "我想当第五名",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201702/09/cms_14502275368095240834513.jpg",
+        "score": "8.1",
+        "viewPoint": "第五名就够了"
+      },
+      {
+        "corner": "1",
+        "id": 2103376,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2103376&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "冲浪企鹅",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-09/14/1442225334783_698696.jpg",
+        "score": "7.2",
+        "viewPoint": "小企鹅追求大梦想"
+      },
+      {
+        "corner": "1",
+        "id": 2761247,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2761247&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-酋雷姆VS圣剑士 凯路迪欧",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/05/1467689251559_194382.jpg",
+        "score": "5.8",
+        "viewPoint": "神奇宝贝15周年电影版"
+      },
+      {
+        "corner": "1",
+        "id": 2761223,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2761223&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-幻影的霸者 索罗亚克",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/05/1467688428392_484104.jpg",
+        "score": "7.4",
+        "viewPoint": "索罗亚克大闹王冠市"
+      },
+      {
+        "corner": "1",
+        "id": 2914923,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2914923&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "非常父子档",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/30/1480494091552_727234.jpg",
+        "score": "5.9",
+        "viewPoint": "李治廷乌龙捐精喜当爹 萌娃文梅森跨国寻父历险记"
+      },
+      {
+        "corner": "1",
+        "id": 2908695,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2908695&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "放牛班的春天",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/23/1479868235473_650615.jpg",
+        "score": "9.2",
+        "viewPoint": "童声合唱演绎岁月经典"
+      },
+      {
+        "corner": "1",
+        "id": 2908691,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2908691&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "音乐永不停歇",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/23/1479867885517_788286.jpg",
+        "score": "8.5",
+        "viewPoint": "讲诉伟大父爱的催泪弹"
+      },
+      {
+        "corner": "1",
+        "id": 2921481,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2921481&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "圣诞情缘",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/08/1481193567813_640216.jpg",
+        "score": "4.5",
+        "viewPoint": "浪漫圣诞情缘"
+      }
+    ],
+    "recommend": [
+      {
+        "corner": "1",
+        "id": 2837511,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2837511&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "我想当第五名",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201702/09/cms_14502275368095240834513.jpg",
+        "score": "8.1",
+        "viewPoint": "第五名就够了"
+      },
+      {
+        "corner": "1",
+        "id": 2103376,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2103376&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "冲浪企鹅",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2015-09/14/1442225334783_698696.jpg",
+        "score": "7.2",
+        "viewPoint": "小企鹅追求大梦想"
+      },
+      {
+        "corner": "1",
+        "id": 2761247,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2761247&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-酋雷姆VS圣剑士 凯路迪欧",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/05/1467689251559_194382.jpg",
+        "score": "5.8",
+        "viewPoint": "神奇宝贝15周年电影版"
+      },
+      {
+        "corner": "1",
+        "id": 2761223,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2761223&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-幻影的霸者 索罗亚克",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/05/1467688428392_484104.jpg",
+        "score": "7.4",
+        "viewPoint": "索罗亚克大闹王冠市"
+      },
+      {
+        "corner": "1",
+        "id": 2914923,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2914923&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "非常父子档",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/30/1480494091552_727234.jpg",
+        "score": "5.9",
+        "viewPoint": "李治廷乌龙捐精喜当爹 萌娃文梅森跨国寻父历险记"
+      },
+      {
+        "corner": "1",
+        "id": 2908695,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2908695&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "放牛班的春天",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/23/1479868235473_650615.jpg",
+        "score": "9.2",
+        "viewPoint": "童声合唱演绎岁月经典"
+      },
+      {
+        "corner": "1",
+        "id": 2908691,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2908691&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "音乐永不停歇",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/23/1479867885517_788286.jpg",
+        "score": "8.5",
+        "viewPoint": "讲诉伟大父爱的催泪弹"
+      },
+      {
+        "corner": "1",
+        "id": 2921481,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2921481&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "圣诞情缘",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/08/1481193567813_640216.jpg",
+        "score": "4.5",
+        "viewPoint": "浪漫圣诞情缘"
+      },
+      {
+        "corner": "1",
+        "id": 2920901,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2920901&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "霍拉斯一家",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-12/07/1481122146738_281578.jpg",
+        "score": "7.7",
+        "viewPoint": "卡拉辛斯基的第二部导演作品 一家子全是戏"
+      },
+      {
+        "corner": "1",
+        "id": 2760322,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2760322&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-破坏之茧与蒂安希",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/04/1467613714452_327533.jpg",
+        "score": "6.1",
+        "viewPoint": "第六世代的新神奇宝贝们闪亮登场"
+      },
+      {
+        "corner": "1",
+        "id": 2760321,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2760321&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-神速的盖诺赛克特 超梦觉醒",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/04/1467613695857_996670.jpg",
+        "score": "6.0",
+        "viewPoint": "超级愿望系列第三部"
+      },
+      {
+        "corner": "1",
+        "id": 2663367,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2663367&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "精灵宝可梦-宝可梦保育家与苍海的王子 玛纳霏",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-04/27/1461733568413_287407.jpg",
+        "score": "6.5",
+        "viewPoint": "护林员与沧海王子"
+      },
+      {
+        "corner": "1",
+        "id": 2914924,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2914924&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "圣诞旋律",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-11/30/1480494446406_433369.jpg",
+        "score": "7.0",
+        "viewPoint": "圣诞天后打造欢乐圣诞节 众多大牌歌手献艺"
+      },
+      {
+        "corner": "1",
+        "id": 2861899,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2861899&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "冰河世纪3",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-09/29/1475132745952_710324.jpg",
+        "score": "8.3",
+        "viewPoint": "冰川动物闯入恐龙世界"
+      },
+      {
+        "corner": "1",
+        "id": 2871650,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2871650&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "鼠来宝",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/11/1476178207310_611002.jpg",
+        "score": "7.3",
+        "viewPoint": "松鼠会唱歌 可爱无极限"
+      },
+      {
+        "corner": "1",
+        "id": 2871664,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2871664&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "鼠来宝2",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/11/1476178582600_850690.jpg",
+        "score": "6.8",
+        "viewPoint": "花栗鼠们恋爱了"
+      },
+      {
+        "corner": "1",
+        "id": 2871231,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2871231&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "鼠来宝3",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-10/11/1476158607982_201774.jpg",
+        "score": "6.5",
+        "viewPoint": "花栗鼠们的荒岛历险记"
+      },
+      {
+        "corner": "0",
+        "id": 2869096,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2869096&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "疯狂约会美丽都",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/201610/13/cms_15582992785666666679399.jpg",
+        "score": "8.7",
+        "viewPoint": "奥斯卡最佳动画长片提名电影"
+      },
+      {
+        "corner": "1",
+        "id": 2839967,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2839967&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "哆啦A梦：新·大雄的日本诞生",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-09/09/1473390036614_230533.jpg",
+        "score": "7.1",
+        "viewPoint": "神兽萌宠奇幻来袭 重返天真时光"
+      },
+      {
+        "corner": "1",
+        "id": 2764159,
+        "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/PlayData?id=2764159&nodeId=118772",
+        "layoutCode": "Detail_Movie",
+        "name": "哆啦A梦-大雄与龙骑士",
+        "picUrl": "http://qin-epg-cs.wasu.tv/xml242/_CMS_NEWS_IMG_/www224/2016-07/07/1467885311295_863385.jpg",
+        "score": "8.0",
+        "viewPoint": "地下恐龙王国大冒险"
+      }
+    ],
+    "videoPageinfo": {
+      "pageSize": 50,
+      "total": 1,
+      "pageNum": 1,
+      "currentPage": 1,
+      "jsonUrl": "http://qin-api-cs.wasu.tv/XmlData/Video?id=2837055&total=1"
+    },
+    "actorInfomation": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=actor&newId=2837055",
+    "label": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=label&newId=2837055",
+    "douBan": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=douBan&newId=2837055",
+    "poster": "http://qin-api-cs.wasu.tv/XmlData/Detail?type=poster&newId=2837055"
+  }
+}

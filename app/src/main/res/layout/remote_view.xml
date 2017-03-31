@@ -14,7 +14,8 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_weight="1"
+        android:ellipsize="marquee"
         android:gravity="center"
-        android:textSize="@dimen/size_text_normal"
-        android:text="特别提示：点击我可以签到，并且记录下来" />
+        android:text="特别提示：点击我可以签到，并且记录下来"
+        android:textSize="@dimen/size_text_normal" />
 </LinearLayout>
